@@ -10,6 +10,10 @@ public class gomi : MonoBehaviour
     [SerializeField] string sceneName;
     private Vector3 screenPoint;
     private Vector3 offset;
+    [SerializeField] float timer;
+    public AudioClip se;
+    AudioSource audioSource;
+    bool c;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,7 +44,7 @@ public class gomi : MonoBehaviour
             Vector3 pos = this.transform.position;
             Instantiate(particle, new Vector3 (pos.x,pos.y,pos.z),Quaternion.identity);
             Destroy(gameObject);
-            if(GManager.instance.stage1_score == score*8)
+            if (GManager.instance.stage1_score == score * 8)
             {
                 SceneManager.LoadScene(sceneName);
             }
