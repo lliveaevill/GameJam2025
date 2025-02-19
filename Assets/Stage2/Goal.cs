@@ -99,7 +99,7 @@ public class Goal : MonoBehaviour
                 audioSource.clip = goodScoreBgmClips[index];
                 audioSource.Play();
             }
-            obj[0].SetActive(true);
+            ActivateGameObjectAfterDelay(obj[0], 5f);
         }
         else
         {
@@ -115,7 +115,16 @@ public class Goal : MonoBehaviour
                 audioSource.clip = excellentScoreBgmClips[index];
                 audioSource.Play();
             }
-             obj[1].SetActive(true);
+            //5秒後に表示
+            StartCoroutine(ActivateGameObjectAfterDelay(obj[1], 5f));
         }
     }
+
+   IEnumerator ActivateGameObjectAfterDelay(GameObject obj, float delay)
+{
+    yield return new WaitForSeconds(delay);
+    obj.SetActive(true);
 }
+}
+
+
