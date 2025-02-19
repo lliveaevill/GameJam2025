@@ -282,8 +282,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 481683976}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: OnButtonClicked
+        m_TargetAssemblyTypeName: button_title, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -340,10 +340,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 481683971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f003f86d3868740bd13a60ecdfbbba, type: 3}
+  m_Script: {fileID: 11500000, guid: d2f65bcaa9539c64e87be61c9a35f71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: stage1
+  sceneName: game
+  clip: {fileID: 8300000, guid: ce35d237805d35a43a41bd67ee83b7f3, type: 3}
 --- !u!1 &557181252
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,8 +473,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1108625277}
-        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: OnButtonClicked
+        m_TargetAssemblyTypeName: button_title, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -530,10 +531,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108625272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f003f86d3868740bd13a60ecdfbbba, type: 3}
+  m_Script: {fileID: 11500000, guid: d2f65bcaa9539c64e87be61c9a35f71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: CreditScene
+  sceneName: 
+  clip: {fileID: 0}
 --- !u!1 &1158712610
 GameObject:
   m_ObjectHideFlags: 0
