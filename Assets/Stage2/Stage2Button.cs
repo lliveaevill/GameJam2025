@@ -36,6 +36,7 @@ public class Stage2Button : MonoBehaviour
         {
             speed *= -1;
         }
+        Debug.Log("Score: " + clickNum);
     }
 
     public void Button1Click() {
