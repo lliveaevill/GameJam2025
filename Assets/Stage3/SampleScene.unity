@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 475839209}
   - component: {fileID: 475839212}
   - component: {fileID: 475839211}
-  - component: {fileID: 475839210}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -157,23 +156,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &475839210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475839208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3ac7b5a2b4f4a4080ccd3c2ac7f784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 475839211}
-  backgroundTextures:
-  - {fileID: 2800000, guid: a64ac066a9a69b44293727269515f650, type: 3}
-  - {fileID: 2800000, guid: a2c830ff2b9a4804799468a4ef2bb1b6, type: 3}
-  changeInterval: 0.5
 --- !u!114 &475839211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1052,9 @@ MonoBehaviour:
   needle: {fileID: 740053511}
   meter: {fileID: 1866866949}
   speed: 2
-  maxScore: 1
+  maxScore: 10
+  minScore: 1
+  backGroundChanger: {fileID: 1761583118}
 --- !u!114 &1227696318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,6 +1128,7 @@ GameObject:
   - component: {fileID: 1761583116}
   - component: {fileID: 1761583115}
   - component: {fileID: 1761583114}
+  - component: {fileID: 1761583118}
   m_Layer: 5
   m_Name: BackGround
   m_TagString: Untagged
@@ -1234,6 +1219,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1761583118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761583113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3ac7b5a2b4f4a4080ccd3c2ac7f784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 475839211}
+  backgroundTextures:
+  - {fileID: 2800000, guid: a64ac066a9a69b44293727269515f650, type: 3}
+  - {fileID: 2800000, guid: a2c830ff2b9a4804799468a4ef2bb1b6, type: 3}
+  cooldownDuration: 0.5
 --- !u!1 &1866866948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86f26341ad5d5bb46aa17c52d69641fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4a77ce505ba9fc4f88662bc9ecb3f3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -5,16 +5,18 @@ public class BackGroundChanger : MonoBehaviour
 {
     public RawImage backgroundImage; // 背景画像のUI要素
     public Texture[] backgroundTextures; // 変更するテクスチャ
-    public float changeInterval = 1.0f; // 変更間隔
 
     private int currentIndex = 0;
+
+    [SerializeField] float cooldownDuration = 0.5f; // クールタイムの秒数
+    private float lastChangeTime = -10f; // 最後に変更した時間
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (backgroundTextures.Length > 0)
+        if (backgroundTextures.Length > 0  && backgroundImage != null)
         {
-            StartCoroutine(ChangeBackground());
+            backgroundImage.texture = backgroundTextures[currentIndex];
         }
     }
 
@@ -24,14 +26,21 @@ public class BackGroundChanger : MonoBehaviour
         
     }
 
-    IEnumerator ChangeBackground()
+    public void ChangeBackground()
     {
-        while (true)
+        if (backgroundTextures.Length == 0 || backgroundImage == null) return;
+
+        //クールタイム中なら何もしない
+        if (Time.time - lastChangeTime < cooldownDuration)
         {
-            yield return new WaitForSeconds(changeInterval);
-            if (backgroundTextures.Length == 0) continue;
-            currentIndex = (currentIndex + 1) % backgroundTextures.Length;
-            backgroundImage.texture = backgroundTextures[currentIndex];
+            Debug.Log("クールタイム中！ 背景変更できません");
+            return;
         }
+
+        currentIndex = (currentIndex + 1) % backgroundTextures.Length;
+        backgroundImage.texture = backgroundTextures[currentIndex];
+
+        //最後に変更した時間を更新
+        lastChangeTime = Time.time;
     }
 }
