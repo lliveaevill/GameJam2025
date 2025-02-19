@@ -44,3 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45127348947f6b34fb924ba11dd7a15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalScore: 0
+  sample_clear: 0
+  sample_score: 0
+  stage1_clear: 0
+  stage1_score: 0
+  stage2_clear: 0
+  stage2_score: 0
+  stage3_clear: 0
+  stage3_score: 0
+  stage4_clear: 0
+  stage4_score: 0

@@ -28,6 +28,8 @@ public class MetarContllor : MonoBehaviour
         {
             Debug.LogError("Meter (メーター背景) がアタッチされていません！", this);
         }
+
+
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class MetarContllor : MonoBehaviour
                 //float score = CalculateScore();
                 score = CalculateScore2();
                 scoreText.text = "x: " + score.ToString("F2");
+                GManager.instance.stage1_score = (int)score * GManager.instance.stage1_score;
             }
         }
 
@@ -55,7 +58,7 @@ public class MetarContllor : MonoBehaviour
             if (waitSceneTime <= 0.0f)
             {
                 // シーン遷移
-                SceneManager.LoadScene("Stage3");
+                SceneManager.LoadScene("GoalScene");
             }
         }
 
@@ -71,6 +74,7 @@ public class MetarContllor : MonoBehaviour
         }
 
         SetNeedle(value);
+        
         
     }
 

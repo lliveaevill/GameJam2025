@@ -27,16 +27,16 @@ public class Goal : MonoBehaviour
     [SerializeField] private float updateDelay = 5f;           // 更新間隔（秒）
 
     // 各カテゴリーのしきい値（例：score < 10 : Poor、10～19 : Below Average、20～29 : Good、30以上 : Excellent）
-    [SerializeField] private int poorThreshold = 10;
-    [SerializeField] private int belowAvgThreshold = 20;
-    [SerializeField] private int goodThreshold = 30;
+    [SerializeField] private int poorThreshold = 1;
+    [SerializeField] private int belowAvgThreshold = 3;
+    [SerializeField] private int goodThreshold = 60;
 
     [SerializeField] private GameObject[] obj;
 
     void Start()
     {
         // シーン開始時に一度更新
-        UpdateImageAndBGM(GManager.instance.stage2_score);
+        UpdateImageAndBGM(GManager.instance.stage1_score);
         // 定期更新開始
         StartCoroutine(PeriodicUpdate());
     }
@@ -46,12 +46,14 @@ public class Goal : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(updateDelay);
-            UpdateImageAndBGM(GManager.instance.stage2_score);
+            UpdateImageAndBGM(GManager.instance.stage1_score);
         }
     }
 
     void UpdateImageAndBGM(int score)
     {
+        Debug.Log("Score: " + score);
+
         // カテゴリー別に分岐し、各カテゴリー内で5点ごとに次の画像/BGMに進む（配列のインデックスの計算）
         if (score < poorThreshold)
         {

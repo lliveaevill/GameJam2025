@@ -43,7 +43,7 @@ public class Stage2Button : MonoBehaviour
         if (isCooldown) return;
 
         clickNum++;
-        GManager.instance.sample_score += 1;
+        GManager.instance.stage1_score += 1;
 
         // クリック音を再生
         if (clickSound != null && audioSource != null)

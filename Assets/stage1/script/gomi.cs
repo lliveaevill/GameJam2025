@@ -46,7 +46,7 @@ public class gomi : MonoBehaviour
             Destroy(gameObject);
             if (GManager.instance.stage1_score == score * 8)
             {
-                SceneManager.LoadScene(sceneName);
+                SceneManager.LoadScene("Stage2");
             }
 
         }

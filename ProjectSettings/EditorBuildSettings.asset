@@ -26,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/stage1/scene/game.unity
     guid: 3f9549c193b5b7847a4be0321d33e666
+  - enabled: 1
+    path: Assets/Stage2/Stage2.unity
+    guid: 90e95468aef2d4996917b025e470d95b
+  - enabled: 1
+    path: Assets/Stage3/SampleScene3.unity
+    guid: c2070634b964c2040aef042541c36bca
+  - enabled: 1
+    path: Assets/Stage2/GoalScene.unity
+    guid: 5106423cdc6a34128a4887e8b864e5ff
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

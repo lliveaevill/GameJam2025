@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -2451,7 +2451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -3081,7 +3081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f326ae06684ab6b41a47eabb67983a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 2
   particle: {fileID: 4573464840513945515, guid: 33b3638ad1076ba408a3865a706d0728, type: 3}
   sceneName: TitleScene
   timer: 0
@@ -3954,7 +3954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 15
-  nextSceneName: Title
+  nextSceneName: Stage2
 --- !u!114 &1997092297
 MonoBehaviour:
   m_ObjectHideFlags: 0

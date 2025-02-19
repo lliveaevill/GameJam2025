@@ -11,13 +11,13 @@ public class ImageChange : MonoBehaviour
     void Start()
     {
         // シーン開始時のスコアを記録
-        initialScore = GManager.instance.sample_score;
+        initialScore = GManager.instance.stage1_score;
     }
 
     void Update()
     {
         // 現在のスコア増加量を計算
-        int scoreIncrease = GManager.instance.sample_score - initialScore;
+        int scoreIncrease = GManager.instance.stage1_score - initialScore;
 
         // 5回押すごとに画像を変更
         int spriteIndex = scoreIncrease / 5;
