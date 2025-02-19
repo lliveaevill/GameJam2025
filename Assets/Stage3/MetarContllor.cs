@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class MetarContllor : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -11,6 +12,7 @@ public class MetarContllor : MonoBehaviour
     public float minScore = 0.0f;
     private bool isMoveNeedle = true; // j‚ª“®‚¢‚Ä‚¢‚é‚©‚Ç‚¤‚©
     private float value = 0.0f; // j‚ÌˆÊ’ui0`1j
+    private float waitSceneTime = 1.0f; // ƒV[ƒ“‘JˆÚ‚·‚é‚Ü‚Å‚Ì‘Ò‚¿ŠÔ
 
     [SerializeField] private BackGroundChanger backGroundChanger;
 
@@ -38,14 +40,24 @@ public class MetarContllor : MonoBehaviour
 
             if (!isMoveNeedle)
             {
-                float score = CalculateScore();
+                //float score = CalculateScore();
+                float score = CalculateScore2();
                 scoreText.text = "Score: " + score.ToString("F2");
-
             }
         }
 
+        if (!isMoveNeedle)
+        {
+            waitSceneTime -= Time.deltaTime;
 
-        if (value  <= 0.5f || value >= 0.85f)
+            if (waitSceneTime <= 0.0f)
+            {
+                // ƒV[ƒ“‘JˆÚ
+                SceneManager.LoadScene("Stage3");
+            }
+        }
+
+        if (value <= 0.3f || value >= 0.85f)
         {
             backGroundChanger.ChangeBackground();
             Debug.Log("ChangeBackground");
@@ -57,6 +69,7 @@ public class MetarContllor : MonoBehaviour
         }
 
         SetNeedle(value);
+        
     }
 
     public void SetNeedle(float value)
@@ -78,5 +91,33 @@ public class MetarContllor : MonoBehaviour
         float normalizedScore = 1 - Mathf.Abs(2 * value - 1);
 
         return Mathf.Lerp(minScore, maxScore, normalizedScore);
+    }
+
+    public float CalculateScore2()
+    {
+        float score = 0.0f;
+
+        if (value >= 0.0f && value < 0.268f)
+        {
+            score = minScore;
+        }
+        else if (value >= 0.268f && value < 0.48f)
+        {
+            score = maxScore / 2;
+        }
+        else if (value >= 0.48f && value < 0.52f)
+        {
+            score = maxScore;
+        }
+        else if (value >= 0.52f && value < 0.732f)
+        {
+            score = maxScore / 2;
+        }
+        else if (value >= 0.732f && value <= 1.0f)
+        {
+            score = minScore;
+        }
+
+        return score;
     }
 }
