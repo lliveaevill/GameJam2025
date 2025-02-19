@@ -8,11 +8,12 @@ public class MetarContllor : MonoBehaviour
     public RectTransform needle;  // 針のUI要素
     public RectTransform meter;   // メーターの背景（長方形のサイズを基準にする）
     public float speed = 2.0f;    // 針の移動速度
+    public float score = 0.0f;    // メーターのスコア
     public float maxScore = 10.0f; // メーターのスコアの最大値
     public float minScore = 0.0f;
     private bool isMoveNeedle = true; // 針が動いているかどうか
     private float value = 0.0f; // 針の位置（0～1）
-    private float waitSceneTime = 1.0f; // シーン遷移するまでの待ち時間
+    private float waitSceneTime = 1.5f; // シーン遷移するまでの待ち時間
 
     [SerializeField] private BackGroundChanger backGroundChanger;
 
@@ -35,14 +36,15 @@ public class MetarContllor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
         {
             isMoveNeedle = !isMoveNeedle;
+            GetComponent<AudioSource>().Play();
             Debug.Log("isMoveNeedle: " + isMoveNeedle);
             Debug.Log("value: " + value);
 
             if (!isMoveNeedle)
             {
                 //float score = CalculateScore();
-                float score = CalculateScore2();
-                scoreText.text = "Score: " + score.ToString("F2");
+                score = CalculateScore2();
+                scoreText.text = "x: " + score.ToString("F2");
             }
         }
 
@@ -95,7 +97,7 @@ public class MetarContllor : MonoBehaviour
 
     public float CalculateScore2()
     {
-        float score = 0.0f;
+        //float score = 0.0f;
 
         if (value >= 0.0f && value < 0.268f)
         {
